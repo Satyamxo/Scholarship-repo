@@ -85,13 +85,14 @@ const Navbar = ({setUser}) => {
               >
                 Logout
               </button>
-
+<NavLink to="https://admin-96ib.onrender.com/">
               <button
                 // onClick={}
                 className=" bg-black text-white py-1 px-4 rounded-full hover:bg-red-600 transition"
               >
                 Admin
               </button>
+              </NavLink>
             </div>
           ) : (
             <Link
