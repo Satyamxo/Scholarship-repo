@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify'; 
+import * as jwt_decode from 'jwt-decode';
 
-const Login = () => {
+const Login = ({setUser}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -22,6 +23,9 @@ const Login = () => {
       
       const token = response.data.token;
       localStorage.setItem('token', token);
+
+      const decoded = jwt_decode.jwtDecode(token);
+  setUser(decoded); 
       navigate("/");
 
 

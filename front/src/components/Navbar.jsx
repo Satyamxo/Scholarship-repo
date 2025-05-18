@@ -5,7 +5,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaUser, FaSignInAlt } from "react-icons/fa";
 import logo from "../assets/logo.png"
 
-const Navbar = (user, onLogout) => {
+const Navbar = ({setUser}) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ const Navbar = (user, onLogout) => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
     setIsSidebarOpen(false); 
+    setUser(null)
     navigate("/login");
   };
 

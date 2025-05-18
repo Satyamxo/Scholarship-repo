@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as jwt_decode from 'jwt-decode';
 
@@ -24,28 +24,54 @@ import { Navigate } from 'react-router-dom';
 
 const App = () => {
  
-  const getUserFromToken = () => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      try {
-        const decoded = jwt_decode.jwtDecode(token);
-        return decoded?.userId ? decoded : null;
-      } catch (error) {
-        console.error('Token decoding failed:', error);
-      }
-    }
-    return null;
-  };
+//   const token = localStorage.getItem('token');
+  
+//   const getUserFromToken = () => {
+    
+//     if (token) {
+//       try {
+//         const decoded = jwt_decode.jwtDecode(token);
+//         return decoded?.userId ? decoded : null;
+//       } catch (error) {
+//         console.error('Token decoding failed:', error);
+//       }
+//     }
+//     return null;
+//   };
+//   const [user , setUser] = useState(getUserFromToken())
+// useEffect(()=>{
+//   const NewUser = getUserFromToken();
+//   setUser(NewUser)
+//   console.log(user);
+// },[token])
+  
+const [user, setUser] = useState(null);
+const [checkingAuth, setCheckingAuth] = useState(true); // NEW
 
-  const user = getUserFromToken();
-  console.log(user);
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    try {
+      const decoded = jwt_decode.jwtDecode(token);
+      setUser(decoded);
+    } catch (error) {
+      console.error("Invalid token");
+      setUser(null);
+    }
+  }
+   setCheckingAuth(false); 
+}, []);
+
+ if (checkingAuth) {
+    return <div className="text-center mt-10 text-gray-500">Loading...</div>;
+  }
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar  setUser={setUser} />
       <main>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setUser = {setUser}/>} />
             <Route path="/signup" element={<SignUp />} />
 
           <Route element={<UserRoute />}>
