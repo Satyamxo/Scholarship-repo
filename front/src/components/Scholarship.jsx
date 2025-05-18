@@ -23,7 +23,7 @@ const Scholarship = () => {
     useEffect(() => {
         const fetchScholarships = async () => {
             try {
-                const response = await axios.get('https://scholarships-back.onrender.com/api/admin/scholarships');
+                const response = await axios.get('https://sc-back-y9w5.onrender.com/api/admin/scholarships');
                 if (response.data.success) {
                     setScholarships(response.data.scholarships); 
                 } else {

@@ -27,7 +27,7 @@ const SignUp = () => {
         setLoading(true);
 
         
-        const url = 'https://scholarships-back.onrender.com/api/user/register';
+        const url = 'https://sc-back-y9w5.onrender.com/api/user/register';
 
         try {
             const response = await fetch(url, {

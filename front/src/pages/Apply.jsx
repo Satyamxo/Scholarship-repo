@@ -21,7 +21,7 @@ const ApplyNow = ({ userId }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://scholarships-back.onrender.com/api/profile/your-scholarships",
+        "https://sc-back-y9w5.onrender.com/api/profile/your-scholarships",
         { userId }
       );
       setScholarships(response.data);
@@ -38,7 +38,7 @@ const ApplyNow = ({ userId }) => {
       const applicationData = { ...data, userId };
 
       const response = await axios.post(
-        `https://scholarships-back.onrender.com/api/scholarships/apply/${scholarshipId}`,
+        `https://sc-back-y9w5.onrender.com/api/scholarships/apply/${scholarshipId}`,
         applicationData
       );
 

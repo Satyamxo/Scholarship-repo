@@ -19,7 +19,7 @@ const ScholarshipManagement = () => {
   const fetchScholarships = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://scholarships-back.onrender.com/api/admin/all-scholarships");
+      const response = await axios.get("https://sc-back-y9w5.onrender.com/api/admin/all-scholarships");
       if (response.data.success) {
         setApplications(response.data.scholarships);
       } else {
@@ -36,7 +36,7 @@ const ScholarshipManagement = () => {
   // Handle the status change for each scholarship application
   const handleStatusChange = async (applicationId, newStatus) => {
     try {
-      const response = await axios.put("http://localhost:8000/api/admin/status", {
+      const response = await axios.put("https://sc-back-y9w5.onrender.com/api/admin/status", {
         scholarshipApplicationId: applicationId,
         newStatus: newStatus,
       });

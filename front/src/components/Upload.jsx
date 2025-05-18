@@ -50,7 +50,7 @@ const DocumentUpload = ({ userId }) => {
       setUploading(true);
       setMessage('');
       const response = await axios.post(
-        'https://scholarships-back.onrender.com/api/documents/upload',
+        'https://sc-back-y9w5.onrender.com/api/documents/upload',
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

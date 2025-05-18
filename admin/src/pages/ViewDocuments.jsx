@@ -13,7 +13,7 @@ const ViewDocumentsPage = () => {
     console.log(userId)
     const fetchDocuments = async () => {
       try {
-        const response = await fetch(`https://scholarships-back.onrender.com/api/documents/view/${userId}`);
+        const response = await fetch(`https://sc-back-y9w5.onrender.com/api/documents/view/${userId}`);
         console.log(response)
         if (!response.ok) {
           throw new Error("Failed to fetch documents");
