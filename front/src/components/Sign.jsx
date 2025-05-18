@@ -27,7 +27,7 @@ const SignUp = () => {
         setLoading(true);
 
         
-        const url = 'http://localhost:8000/api/user/register';
+        const url = 'https://scholarships-back.onrender.com/api/user/register';
 
         try {
             const response = await fetch(url, {

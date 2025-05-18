@@ -11,7 +11,7 @@ const YourScholarships = ({ userId }) => {
       console.log(userId)
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/profile/your-scholarships", 
+          "https://scholarships-back.onrender.com/api/profile/your-scholarships", 
           { userId } 
         );
         setScholarships(response.data);

@@ -21,7 +21,7 @@ const ScholarshipForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/api/admin/create', formData); // Replace with your API endpoint
+      const response = await axios.post('https://scholarships-back.onrender.com/api/admin/create', formData); // Replace with your API endpoint
       if (response.status === 201) {
         toast.success('Scholarship uploaded successfully!');
         setFormData({

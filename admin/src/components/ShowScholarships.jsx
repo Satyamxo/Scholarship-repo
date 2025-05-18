@@ -9,7 +9,7 @@ const ScholarshipsList = () => {
   useEffect(() => {
     const fetchScholarships = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/admin/scholarships');
+        const response = await axios.get('https://scholarships-back.onrender.com/api/admin/scholarships');
         
         console.log('API Response:', response.data);
         
@@ -32,7 +32,7 @@ const ScholarshipsList = () => {
     if (!window.confirm('Are you sure you want to delete this scholarship?')) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/admin/scholarships/${id}`);
+      await axios.delete(`https://scholarships-back.onrender.com/api/admin/scholarships/${id}`);
       setScholarships((prev) => prev.filter((scholarship) => scholarship._id !== id));
       toast.success('Scholarship deleted successfully!');
     } catch (error) {

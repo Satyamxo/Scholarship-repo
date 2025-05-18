@@ -15,7 +15,7 @@ const Login = ({setUser}) => {
     setLoading(true); 
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user/login', { email, password }, {
+      const response = await axios.post('https://scholarships-back.onrender.com/api/user/login', { email, password }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}` 
         }});

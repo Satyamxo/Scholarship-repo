@@ -13,7 +13,7 @@ const LoginPage = () => {
 
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:8000/api/admin/login", { email: emailValue, password: passwordValue },{headers: {
+            const response = await axios.post("https://scholarships-back.onrender.com/api/admin/login", { email: emailValue, password: passwordValue },{headers: {
                     Authorization: `Bearer ${localStorage.getItem('adminToken')}`,
                   }})
             console.log(response)

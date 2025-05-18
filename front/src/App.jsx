@@ -24,26 +24,6 @@ import { Navigate } from 'react-router-dom';
 
 const App = () => {
  
-//   const token = localStorage.getItem('token');
-  
-//   const getUserFromToken = () => {
-    
-//     if (token) {
-//       try {
-//         const decoded = jwt_decode.jwtDecode(token);
-//         return decoded?.userId ? decoded : null;
-//       } catch (error) {
-//         console.error('Token decoding failed:', error);
-//       }
-//     }
-//     return null;
-//   };
-//   const [user , setUser] = useState(getUserFromToken())
-// useEffect(()=>{
-//   const NewUser = getUserFromToken();
-//   setUser(NewUser)
-//   console.log(user);
-// },[token])
   
 const [user, setUser] = useState(null);
 const [checkingAuth, setCheckingAuth] = useState(true); // NEW
